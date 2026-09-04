@@ -1,12 +1,8 @@
-# Shared-Language Throughline - Establishing Precedent for Dynamic Interactive Calibration
+# Shared-Language Throughline
 
-*Currently in development - see bottom for details.
-
-A drop-in system-prompt / custom-instruction for keeping an AI assistant's
-vocabulary calibrated to what you've actually demonstrated command of —
-without asking it to dumb anything down. Model-agnostic: works with any
-assistant that supports a persistent system prompt, custom instructions, or
-project-level context (Claude, ChatGPT, Gemini, local models, etc.).
+A drop-in Claude Project / system-prompt instruction for keeping an AI
+assistant's vocabulary calibrated to what you've actually demonstrated
+command of — without asking it to dumb anything down.
 
 ## The problem this solves
 
@@ -34,16 +30,16 @@ assistant that never introduces an idea you don't already have isn't
 helping you learn anything.
 
 **Reaching beyond your *language* without first building a bridge is not
-fine.** If a formal term would help, the instruction requires the assistant
-to translate the idea into terms you've already shown you can use *before*
+fine.** If a formal term would help, the instruction requires Claude to
+translate the idea into terms you've already shown you can use *before*
 attaching the formal name to it — and to treat the formal name as optional,
 not load-bearing. You get the concept either way; the vocabulary is offered,
 not imposed.
 
 This is a genuinely different axis from "explain simply" or "match my
 level." It's asking for something bidirectional and ongoing: low
-translation cost from what the assistant says into your working model, and
-high interpretability of what it says, checked against what you've actually
+translation cost from what Claude says into your working model, and high
+interpretability of what Claude says, checked against what you've actually
 demonstrated — not against what a generic user at your stated skill level
 would be assumed to know.
 
@@ -51,12 +47,12 @@ would be assumed to know.
 
 A term doesn't count as understood just because you used it back once. The
 instruction sets the bar at *consistent, coherent* integration into your own
-working model over time — which also means the assistant is expected to
-keep introducing new vocabulary regularly, not go quiet once one offer gets
+working model over time — which also means Claude is expected to keep
+introducing new vocabulary regularly, not go quiet once one offer gets
 politely acknowledged. Both halves are required at once: don't force a
 correction, and don't stop stretching. That tension is intentional — it's
-meant to be navigated with judgment each time, not resolved away by the
-wording.
+meant to be navigated with judgment on Claude's part each time, not resolved
+away by the wording.
 
 ## How to use it
 
@@ -64,31 +60,26 @@ wording.
 2. Fill in the two bracketed sections — who the instruction refers to (can
    just be "the user"), and a concrete statement of what you're actually
    working toward.
-3. Paste the result into whatever your platform calls custom instructions,
-   system prompt, or persona — Claude Projects, a ChatGPT custom GPT or
-   its "customize ChatGPT" settings, Gemini Gems, a local model's system
-   message, or directly into an API call.
+3. Paste the result into your Claude Project's custom instructions (Project
+   settings → custom instructions), or into your system prompt if you're
+   building on the API directly.
 
-It works best wherever the same instruction persists across many
-conversations rather than just one — the "consistent integration over
-time" bar assumes the assistant can track whether a term has actually
-stuck, which requires the instruction to be loaded in every session, not
-just the one where you introduce it. A single one-off chat with no memory
-between sessions will only get the "don't correct me" half of the benefit,
-not the "keep track of what's landed" half.
+It works best in a Project or persistent-context setup where the same
+instruction is present across many conversations — the "consistent
+integration over time" bar in the instruction assumes Claude can track
+whether a term has actually stuck, which requires it to be loaded in every
+session, not just the one where you introduce it.
 
 ## Origin
 
 This came out of an actual multi-session research project — independent
-number-theory work being developed through extended conversation with
-Claude — after repeated cases of the assistant introducing standard
-terminology for something the user had already discovered independently,
-in a way that read as correction rather than collaboration. The instruction
-went through several rounds of the user editing it, the assistant
-proofreading and stress-testing it for internal consistency, and the user
-revising again, before landing here. Written with Claude in mind, but there
-is nothing Claude-specific in the mechanism — it's offered as-is in case the
-same failure mode shows up in your own work with any assistant.
+number-theory work being developed through extended conversation — after
+repeated cases of Claude introducing standard terminology for something the
+user had already discovered independently, in a way that read as
+correction rather than collaboration. The instruction went through several
+rounds of the user editing it, Claude proofreading and stress-testing it for
+internal consistency, and the user revising again, before landing here. It's
+offered as-is in case the same failure mode shows up in your own work.
 
 ## License
 
