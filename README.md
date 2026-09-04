@@ -1,5 +1,7 @@
 # Shared-Language Throughline - Establishing Precedent for Dynamic Interactive Calibration
 
+*Currently in development - see bottom for details.
+
 A drop-in system-prompt / custom-instruction for keeping an AI assistant's
 vocabulary calibrated to what you've actually demonstrated command of —
 without asking it to dumb anything down. Model-agnostic: works with any
